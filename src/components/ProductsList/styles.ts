@@ -1,16 +1,18 @@
 import styled from 'styled-components'
 import { Props } from '../ProductsList/index'
-import { breakpoints, color } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { Card } from '../Product/styles'
 
-export const Container = styled.section<Omit<Props, 'games' | 'title'>>`
+export const Container = styled.section<
+  Omit<Props, 'games' | 'title' | 'isLoading'>
+>`
   padding: 32px 0;
   background-color: ${(props) =>
-    props.background === 'black' ? color.black : color.gray};
+    props.background === 'black' ? colors.black : colors.gray};
 
   ${Card} {
     background-color: ${(props) =>
-      props.background === 'black' ? color.gray : color.black};
+      props.background === 'black' ? colors.gray : colors.black};
   }
 `
 
